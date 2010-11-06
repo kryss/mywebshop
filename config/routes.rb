@@ -1,4 +1,20 @@
 Mywebshop::Application.routes.draw do
+  devise_for :users
+
+  get "pages/home"
+
+  get "pages/help"
+
+  get "pages/contact"
+
+  get "pages/about"
+  
+  match '/contact', :to => "pages#contact"
+  match '/help', :to => "pages#help"
+  match '/about', :to => "pages#about"
+  
+  
+  root :to => "pages#home"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

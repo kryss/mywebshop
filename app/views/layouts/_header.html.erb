@@ -1,0 +1,36 @@
+<header>
+  <%= image_tag("logo.png", :alt => "LOGO") %>
+  <nav class="round">
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Help", '#' %></li>
+  <br/>
+  
+     <% if user_signed_in? %>
+       <%= I18n.t :welcome %> <%= current_user.email %>. <%= I18n.t :not_you %>
+       <%= link_to "Sign out", destroy_user_session_path %>
+     <% else %>
+      <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+     
+     <% end %>
+     
+    </ul>
+  </nav>
+  
+  <nav>
+    <ul>
+      <li><%= link_to "Chinese", root_path(:locale => 'zh') %></li>
+      <li><%= link_to "French", root_path(:locale => 'fr') %></li>
+      <li><%= link_to "English", root_path(:locale => 'en') %></li>
+    </ul>
+  </nav>
+  
+  <% if flash[:notice] != nil  %>
+    <p class="notice"><%= notice %></p>
+  <% end %>
+  <% if flash[:alert] != nil  %>
+    <p class="alert"><%= alert %></p>
+  <% end %>
+  
+
+</header>

@@ -1,7 +1,7 @@
 # Chinese (China) translations for Ruby on Rails 
 # by tsechingho (http://github.com/tsechingho)
 
-"zh-CN":
+"zh":
   hello: "你好"
   date:
     formats:
