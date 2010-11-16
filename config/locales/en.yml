@@ -5,3 +5,6 @@ en:
   hello: "Hello"
   welcome: "Welcome"
   not_you:  "Not you?"
+  you_are_seller: "Your are seller."
+  you_are_customer: "Your are customer."
+  

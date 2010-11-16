@@ -7,11 +7,18 @@
   <br/>
   
      <% if user_signed_in? %>
-       <%= I18n.t :welcome %> <%= current_user.email %>. <%= I18n.t :not_you %>
-       <%= link_to "Sign out", destroy_user_session_path %>
+       <%= I18n.t :welcome %> <%= current_user.email %>.
+       <% if current_user.is_seller %>
+          <%= I18n.t :you_are_seller %>
+
+       <% else %>
+          <%= I18n.t :you_are_customer %>
+       <% end %>
+
+
+       <%= I18n.t :not_you %><%= link_to "Sign out", destroy_user_session_path %>
      <% else %>
       <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-     
      <% end %>
      
     </ul>
