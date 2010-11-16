@@ -4,10 +4,12 @@
     <ul>
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Help", '#' %></li>
+      <li><%= link_to "Users", users_index_path %></li>
   <br/>
-  
+   <li>
      <% if user_signed_in? %>
-       <%= I18n.t :welcome %> <%= current_user.email %>.
+      <li><%= link_to "Edit", edit_user_registration_path %></li>
+      <%= I18n.t :welcome %> <%= link_to current_user.email, users_show_path_helper(current_user.id) %>.
        <% if current_user.is_seller %>
           <%= I18n.t :you_are_seller %>
 
@@ -16,11 +18,13 @@
        <% end %>
 
 
-       <%= I18n.t :not_you %><%= link_to "Sign out", destroy_user_session_path %>
+    </li>
+    <li>     <%= I18n.t :not_you %><%= link_to "Sign out", destroy_user_session_path %>
+
      <% else %>
       <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
      <% end %>
-     
+    </li>
     </ul>
   </nav>
   

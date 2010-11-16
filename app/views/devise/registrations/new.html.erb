@@ -15,7 +15,10 @@
   <p><%= f.label :is_seller %><br />
   <%= f.check_box :is_seller %></p>
 
+  <p><%= f.label "Input More information : " %><br />
+  <input type="checkbox" name="MoreInfo" value="yes">
 
+  <%= render 'more_info', :f => f %>
 
   <p><%= f.submit "Sign up" %></p>
 <% end %>

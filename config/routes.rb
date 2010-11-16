@@ -1,12 +1,13 @@
 Mywebshop::Application.routes.draw do
+
   devise_for :users
 
+
+  match "users/show/:id", :to => "users#show"
+  get "users/index"
   get "pages/home"
-
   get "pages/help"
-
   get "pages/contact"
-
   get "pages/about"
   
   match '/contact', :to => "pages#contact"

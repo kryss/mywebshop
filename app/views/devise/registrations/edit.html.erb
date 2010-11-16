@@ -18,6 +18,7 @@
   <p><%= f.label :is_seller %><br />
   <%= f.check_box :is_seller %></p>
 
+  <%= render 'more_info', :f => f %>  
   <p><%= f.submit "Update" %></p>
 <% end %>
 
