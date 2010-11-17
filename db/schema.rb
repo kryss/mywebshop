@@ -10,7 +10,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101116013227) do
+ActiveRecord::Schema.define(:version => 20101117163006) do
+
+  create_table "shops", :force => true do |t|
+    t.string   "name"
+    t.string   "adress"
+    t.string   "city"
+    t.string   "zipcode"
+    t.string   "country"
+    t.string   "phone"
+    t.string   "logo"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "shops", ["adress"], :name => "index_shops_on_adress"
+  add_index "shops", ["name"], :name => "index_shops_on_name"
+  add_index "shops", ["phone"], :name => "index_shops_on_phone"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "",    :null => false

@@ -1,10 +1,10 @@
 <div id="menu_bar">
   <ul>
-    <li><%= I18n.t :my_shop %></li>
-    <li><%= I18n.t :prorducts_mgt %></li>
-    <li><%= I18n.t :clients_mgt %></li>
-    <li><%= I18n.t :subscription %></li>
-    <li><%= I18n.t :services %></li>
+    <li><%= link_to I18n.t(:my_shop), url_for(:page => "seller", :content_page => "myshop")%></li>
+    <li><%= link_to I18n.t(:prorducts_mgt), url_for(:page => "seller", :content_page => "productsmgt") %></li>
+    <li><%= link_to I18n.t(:clients_mgt), url_for(:page => "seller", :content_page => "clientsmgt") %></li>
+    <li><%= link_to I18n.t(:subscription), url_for(:page => "seller", :content_page => "subscription") %></li>
+    <li><%= link_to I18n.t(:services), url_for(:page => "seller", :content_page => "services") %></li>
 
   </ul>
 </div>

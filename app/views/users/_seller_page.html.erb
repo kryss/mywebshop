@@ -1,2 +1,16 @@
-sellerpage
 <%= render "sell_menu_bar" %>
+<h1><%= @content_page %></h1>
+
+<% if @content_page.nil? %>
+    <%= render "default_seller_content" %>
+<% elsif @content_page == "myshop" %>
+    <%= render "myshop_content" %>
+<% elsif @content_page == "productsmgt" %>
+    <%= render "productsmgt_content" %>
+<% elsif @content_page == "clientsmgt" %>
+    <%= render "clientsmgt_content" %>
+<% elsif @content_page == "subscription" %>
+    <%= render "subscription_content" %>
+<% elsif @content_page == "services" %>
+    <%= render "services_content" %>
+<% end %>

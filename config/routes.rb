@@ -1,9 +1,19 @@
 Mywebshop::Application.routes.draw do
-
+#
+#  get "shops/index"
+#
+#  get "shops/show"
+#
+#  get "shops/create"
+#
+#  get "shops/destroy"
+#
+#  get "shops/edit"
+  resources :shops
   devise_for :users
 
 
-  match "users/show/:id(/:page)", :to => "users#show"
+  match "users/show/:id(/:page)(/:content_page)", :to => "users#show"
   get "users/index"
   get "pages/home"
   get "pages/help"

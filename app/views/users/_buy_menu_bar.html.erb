@@ -1,7 +1,7 @@
 <div id="menu_bar">
   <ul>
-    <li><%= I18n.t :favorite_shops %></li>
-    <li><%= I18n.t :favorite_products %></li>
-    <li><%= I18n.t :my_alerts %></li>
+    <li><%= link_to I18n.t(:favorite_shops), url_for(:page => "buyer", :content_page => "favorite_shops") %></li>
+    <li><%= link_to I18n.t(:favorite_products), url_for(:page => "buyer", :content_page => "favorite_products")%></li>
+    <li><%= link_to I18n.t(:my_alerts), url_for(:page => "buyer", :content_page => "my_alerts") %></li>
    </ul>
 </div>

@@ -1,2 +1,12 @@
-buyer_page
 <%= render "buy_menu_bar" %>
+<h1><%= @content_page %></h1>
+
+<% if @content_page.nil? %>
+    <%= render "default_buyer_content" %>
+<% elsif @content_page == "favorite_shops" %>
+    <%= render "favorite_shops_content" %>
+<% elsif @content_page == "favorite_products" %>
+    <%= render "favorite_products_content" %>
+<% elsif @content_page == "alerts" %>
+    <%= render "alerts_content" %>
+<% end %>

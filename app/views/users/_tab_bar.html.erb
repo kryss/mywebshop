@@ -1,8 +1,8 @@
 <div id="tab_bar">
   <ul>
-    <li><%= link_to I18n.t(:buy), "buyer" %></li>
-    <li><%= link_to I18n.t(:sell), "seller" %></li>
-    <li><%= link_to I18n.t(:message), "msg" %></li>
+    <li><%= link_to I18n.t(:buy), show_user_url("buyer") %></li>
+    <li><%= link_to I18n.t(:sell), show_user_url("seller") %></li>
+    <li><%= link_to I18n.t(:message), show_user_url("msg") %></li>
 
   </ul>
 </div>
