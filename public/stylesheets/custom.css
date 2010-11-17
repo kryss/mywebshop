@@ -78,3 +78,38 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
+#tab_bar {
+    display:table;
+
+}
+#tab_bar ul {
+    display:table;
+    list-style-type:none;
+    margin:1 1 1 1;
+    border:1px;
+    background-color:#dcdcdc;
+}
+
+#tab_bar ul li {
+    display:table-cell;
+    border:1px;
+    border-color:black;
+    border-style:solid;
+    padding: 4px;
+    width:100%;
+}
+
+#tab_bar a {
+    border:1px;
+    margin:1px;
+    
+}
+
+#menu_bar {
+    display:table;
+}
+
+#menu_bar ul {
+    list-style-type:none;
+    background-color:#faebd7;
+}

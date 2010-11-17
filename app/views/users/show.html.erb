@@ -1,1 +1,9 @@
+<%= render "tab_bar" %>
+<% if @page == "seller" %>
+    <%= render "seller_page" %>
+<% elsif @page == "buyer" %>
+    <%= render "buyer_page" %>
+<% elsif @page == "msg" %>
+    <%= render "msg_page" %>
+<% end  %>
 <%= render @user %>

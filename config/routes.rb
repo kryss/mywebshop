@@ -3,7 +3,7 @@ Mywebshop::Application.routes.draw do
   devise_for :users
 
 
-  match "users/show/:id", :to => "users#show"
+  match "users/show/:id(/:page)", :to => "users#show"
   get "users/index"
   get "pages/home"
   get "pages/help"

@@ -39,6 +39,6 @@ class User < ActiveRecord::Base
 
 
   $countries = %w[France Italie Chine]
-  $languages = %w[Franch Italian Chinese]
+  $languages = %w[French Italian Chinese]
 
 end
