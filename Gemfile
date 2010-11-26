@@ -10,6 +10,7 @@ gem 'devise', '>= 1.1.3'
 
 gem 'webrat'
 gem 'will_paginate', '~> 3.0.beta'
+gem 'tabs_on_rails'
 
 group :development do
   gem 'rspec-rails', ">=2.0.0.beta.22"

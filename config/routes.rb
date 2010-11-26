@@ -9,6 +9,7 @@ Mywebshop::Application.routes.draw do
 #  get "shops/destroy"
 #
 #  get "shops/edit"
+
   resources :shops
   devise_for :users
 

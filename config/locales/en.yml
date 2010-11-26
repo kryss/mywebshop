@@ -18,3 +18,6 @@ en:
   buy: "Buy"
   sell: "Sell"
   message: "Message"
+  edit_shop: "Edit shop"
+  new_shop: "New shop"
+  create_shop_first: "You have to create a shop first."

@@ -107,9 +107,15 @@ nav ul li a:hover {
 
 #menu_bar {
     display:table;
+    float:left;
 }
 
 #menu_bar ul {
     list-style-type:none;
     background-color:#faebd7;
+}
+
+
+#contents_zone {
+    background-color:#f0f8ff;
 }

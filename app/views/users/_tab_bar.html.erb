@@ -1,3 +1,14 @@
+<!--Tabplugin Doc http://www.simonecarletti.com/code/tabs_on_rails/-->
+
+<% tabs_tag do |tab| %>
+  <%= tab.buy      I18n.t(:buy), show_user_url("buyer") %>
+  <%= tab.sell I18n.t(:sell), show_user_url("seller") %>
+  <%= tab.message   I18n.t(:message), show_user_url("msg")  %>
+<% end %>
+
+
+
+<!--
 <div id="tab_bar">
   <ul>
     <li><%= link_to I18n.t(:buy), show_user_url("buyer") %></li>
@@ -5,4 +16,4 @@
     <li><%= link_to I18n.t(:message), show_user_url("msg") %></li>
 
   </ul>
-</div>
+</div>-->

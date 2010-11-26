@@ -5,6 +5,7 @@
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Help", '#' %></li>
       <li><%= link_to "Users", users_index_path %></li>
+      <li><%= link_to "Shops", shops_path %></li>
   <br/>
    <li>
      <% if user_signed_in? %>
@@ -41,6 +42,9 @@
   <% end %>
   <% if flash[:alert] != nil  %>
     <p class="alert"><%= alert %></p>
+  <% end %>
+  <% if flash[:success] != nil  %>
+    <p class="success"><%= flash[:success]  %></p>
   <% end %>
   
 

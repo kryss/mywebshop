@@ -1,16 +1,17 @@
 <%= render "sell_menu_bar" %>
-<h1><%= @content_page %></h1>
-
+<div id="contents_zone" >
+<!-- <h1><%= @content_page %></h1> -->
 <% if @content_page.nil? %>
     <%= render "default_seller_content" %>
-<% elsif @content_page == "myshop" %>
-    <%= render "myshop_content" %>
-<% elsif @content_page == "productsmgt" %>
-    <%= render "productsmgt_content" %>
-<% elsif @content_page == "clientsmgt" %>
-    <%= render "clientsmgt_content" %>
+<% elsif @content_page == "my_shop" %>
+    <%= render "my_shop_content" %>
+<% elsif @content_page == "products_mgt" %>
+    <%= render "products_mgt_content" %>
+<% elsif @content_page == "clients_mgt" %>
+    <%= render "clients_mgt_content" %>
 <% elsif @content_page == "subscription" %>
     <%= render "subscription_content" %>
 <% elsif @content_page == "services" %>
     <%= render "services_content" %>
 <% end %>
+</div>

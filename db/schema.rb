@@ -14,20 +14,22 @@ ActiveRecord::Schema.define(:version => 20101117163006) do
 
   create_table "shops", :force => true do |t|
     t.string   "name"
-    t.string   "adress"
+    t.string   "address"
     t.string   "city"
-    t.string   "zipcode"
+    t.string   "zip_code"
     t.string   "country"
     t.string   "phone"
     t.string   "logo"
     t.string   "description"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "shops", ["adress"], :name => "index_shops_on_adress"
+  add_index "shops", ["address"], :name => "index_shops_on_address"
   add_index "shops", ["name"], :name => "index_shops_on_name"
   add_index "shops", ["phone"], :name => "index_shops_on_phone"
+  add_index "shops", ["user_id"], :name => "index_shops_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "",    :null => false
