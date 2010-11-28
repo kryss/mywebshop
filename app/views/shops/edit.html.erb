@@ -1,8 +1,6 @@
 <h1>Update shop information</h1>
-<%= form_for(@shop) do |f| %>
-  <%= render 'shop_fields', :f => f %>
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+<%= semantic_form_for @shop do |f| %>
 
+  <%= render 'shop_fields', :f => f %>
+  <%= f.commit_button %>
 <% end %>

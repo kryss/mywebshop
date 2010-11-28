@@ -11,31 +11,43 @@
 #  created_at  :datetime
 #  updated_at  :datetime -->
 
-
+  
+  <!--   
+    <%= f.label :name %><br />
+    <%= f.text_field :name %> *<br/>
+    
+    <%= f.label :address %><br />
+    <%= f.text_field :address %> *
+    <br/>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %> *
+    <br/>
+    <%= f.label :zip_code %><br />
+    <%= f.text_field :zip_code %> *
+    <br/>
+    <%= f.label :country %><br />
+    <%= f.text_field :country %> *
+    <br/>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %> *
+    <br/>
+    <%= f.label :logo %><br />
+    <%= f.text_field :logo %>
+    <br/>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %> -->
 
 <%= render 'shared/error_messages', :object => f.object %>
 <div class="field">
-  <%= f.label :name %><br />
-  <%= f.text_field :name %> *<br/>
-  
-  <%= f.label :address %><br />
-  <%= f.text_field :address %> *
-  <br/>
-  <%= f.label :city %><br />
-  <%= f.text_field :city %> *
-  <br/>
-  <%= f.label :zip_code %><br />
-  <%= f.text_field :zip_code %> *
-  <br/>
-  <%= f.label :country %><br />
-  <%= f.text_field :country %> *
-  <br/>
-  <%= f.label :phone %><br />
-  <%= f.text_field :phone %> *
-  <br/>
-  <%= f.label :logo %><br />
-  <%= f.text_field :logo %>
-  <br/>
-  <%= f.label :description %><br />
-  <%= f.text_area :description %>
+    <%= f.inputs do %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :city %>
+      <%= f.input :zip_code, :as => :numeric %>
+      <%= f.input :country, :as => :string %>
+      <%= f.input :phone %>
+      <%= f.input :logo %>
+      <%= f.input :description, :as => :text %>
+    <% end %>
+
 </div>
