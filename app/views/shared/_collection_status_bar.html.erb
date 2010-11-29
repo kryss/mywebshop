@@ -1,0 +1,13 @@
+<div id="collection_top_bar">
+  Your position : <%= link_to current_shop.name, shops_shop_status_path %> 
+  <% if @collection.nil? %>
+    | You have <%= pluralize(current_shop.collections.count, "collection") %>.  |  
+    <%= link_to "New collection", new_shop_collection_url(current_user.id) %> 
+  <% else %>
+    > <%= link_to @collection.name, shops_product_mgt_path %> 
+    | You have <%= pluralize(@collection.products.count, "product") %> in this collection |
+    <%= link_to "New product", new_product_path %>
+  <% end %>
+  
+</div>
+<hr>
