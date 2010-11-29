@@ -10,6 +10,13 @@
   height: 95%
 }
 
+
+
+#facebook_b {
+  float:right;
+  margin-top: 50px;  
+}
+
 #status_bar {
   background-color: #CCCCCC;
   border: 0.1em solid #dcdce9;
@@ -43,21 +50,25 @@
 }
 
 #logo {
-  position: relative;
-  left: 10px;
+  float: left;
+  margin-left:5px;
   margin-bottom: 5px;
 }
 
 #logo img {
-  border: 0.1em solid #990000;
+
   display: block;
+}
+
+#tab_menu {
+  clear: both;
 }
 
 #tab_menu ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-  
+    
 }
 #tab_menu li {
     float: left;
