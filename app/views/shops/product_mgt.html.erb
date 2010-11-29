@@ -1,23 +1,4 @@
 <div id="contents_zone" >
 <%= render "shared/collection_status_bar" %>
-
-
-<% @count = 0 %>
-<% @collections.each do |c| %>
-  <% if @count % 6 == 0 %>
-     <div class="wrapper"> 
-  <% end %>
-  
-  <% if @count % 6 == 0 %>
-     </div> 
-  <% end %>
-  <div class="left<%= @count % 6 + 1 %>"> <%= render c, :c => c %> </div>
-  <% @count += 1 %>
-<% end %>
-  <% if @count == 6 %>
-     </div> 
-  <% end %>
+<%= render "shared/grid_show", :list_items => @collections %>
 </div>
-
-
-todo:NAVIG BAR ex: Votre place : site > collection >

@@ -1,0 +1,18 @@
+<% @count = 0 %>
+<% list_items.each do |c| %>
+  <% if @count % 6 == 0 %>
+     <div class="wrapper"> 
+  <% end %>
+  
+  <% if @count % 6 == 0 %>
+     </div> 
+  <% end %>
+  <div class="left<%= @count % 6 + 1 %>"> <%= render c, :c => c %> </div>
+  <% @count += 1 %>
+<% end %>
+  <% if @count == 6 %>
+     </div> 
+  <% end %>
+</div>
+
+

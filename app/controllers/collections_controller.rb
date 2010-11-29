@@ -40,11 +40,12 @@ class CollectionsController < ApplicationController
   end
 
   def show 
-    current_collection = @collection
+    session[:current_collection] = @collection
   end
 
 private 
   def right_shop
+    store_location
     @collection = Collection.find(params[:id])
     @shop = current_shop
     redirect_back_or root_path unless current_shop.collections.include?(@collection)

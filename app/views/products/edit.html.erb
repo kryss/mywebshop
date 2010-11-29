@@ -1,2 +1,9 @@
-<h1>Products#edit</h1>
-<p>Find me in app/views/products/edit.html.erb</p>
+<h1>Edit a new Product</h1>
+
+<%= semantic_form_for [@product] do |f| %>
+
+  <%= render 'product_fields', :f => f %>
+  <%= f.commit_button %>
+<% end %>
+
+

@@ -29,10 +29,6 @@ def current_shop
   current_user.shop
 end
 
-def current_collection=(collection)
-  session[:current_collection] = collection
-end
-
 def current_collection
   session[:current_collection]
 end

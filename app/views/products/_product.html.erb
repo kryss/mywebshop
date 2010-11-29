@@ -1,0 +1,7 @@
+<div class="co_edit_link"><%= link_to "Edit", edit_product_path(c.id) %> </div>
+<div class="co_name"><%= "#{c.name}"  %></div>
+<div class="co_delete_link"><%= link_to "delete", product_path(c.id), :method => :delete, :confirm => "Sure ?",
+                                  :title => "Delete #{c.name}" %></div>
+<div class="img_box">
+<%= link_to image_tag("product_img.png", :border=>0), product_path(c.id) %>
+</div>
