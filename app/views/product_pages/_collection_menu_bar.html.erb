@@ -1,0 +1,6 @@
+<div id="collection_top_bar">
+  You have <%= pluralize(current_shop.collections.count, "collection") %>.  |  
+  <%= link_to "New collection", new_shop_collection_url(current_user.id) %> 
+  
+</div>
+<hr>

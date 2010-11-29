@@ -10,7 +10,42 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101117163006) do
+ActiveRecord::Schema.define(:version => 20101128010710) do
+
+  create_table "collections", :force => true do |t|
+    t.string   "name"
+    t.boolean  "is_private"
+    t.integer  "photo_id",    :default => -1
+    t.string   "description"
+    t.integer  "shop_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "collections", ["name"], :name => "index_collections_on_name"
+
+  create_table "photos", :force => true do |t|
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "data_file_name"
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.datetime "data_updated_at"
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.string   "reference"
+    t.string   "description"
+    t.integer  "collection_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "products", ["description"], :name => "index_products_on_description"
+  add_index "products", ["name"], :name => "index_products_on_name"
+  add_index "products", ["reference"], :name => "index_products_on_reference"
 
   create_table "shops", :force => true do |t|
     t.string   "name"

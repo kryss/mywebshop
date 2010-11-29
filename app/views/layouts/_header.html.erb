@@ -1,41 +1,33 @@
 <header>
-  <%= image_tag("logo.png", :alt => "LOGO") %>
-  <nav class="round">
-    <ul>
+  <div id="status_bar">
+    <ul class="left_side">
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Help", '#' %></li>
       <li><%= link_to "Users", users_index_path %></li>
       <li><%= link_to "Shops", shops_path %></li>
-  <br/>
-   <li>
-     <% if user_signed_in? %>
+      <% if user_signed_in? %>
       <li><%= link_to "Edit", edit_user_registration_path %></li>
+      <li>
       <%= I18n.t :welcome %> <%= link_to current_user.email, users_show_path_helper(current_user.id) %>.
-       <% if current_user.is_seller %>
-          <%= I18n.t :you_are_seller %>
-
-       <% else %>
-          <%= I18n.t :you_are_customer %>
-       <% end %>
-
-
-    </li>
-    <li>     <%= I18n.t :not_you %><%= link_to "Sign out", destroy_user_session_path %>
-
+      </li>
+      <li>     <%= I18n.t :not_you %> <%= link_to "Sign out", destroy_user_session_path %>
      <% else %>
       <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
      <% end %>
-    </li>
+      </li>
     </ul>
-  </nav>
-  
-  <nav>
-    <ul>
+    <ul class="right_side">
       <li><%= link_to "Chinese", root_path(:locale => 'zh') %></li>
       <li><%= link_to "French", root_path(:locale => 'fr') %></li>
       <li><%= link_to "English", root_path(:locale => 'en') %></li>
     </ul>
-  </nav>
+  </div>
+  <br/>
+  
+<div id="logo"> 
+  <%= image_tag("logo.png", :alt => "LOGO") %>
+</div>
+  
   
   <% if flash[:notice] != nil  %>
     <p class="notice"><%= notice %></p>
@@ -47,5 +39,9 @@
     <p class="success"><%= flash[:success]  %></p>
   <% end %>
   
+<% if user_signed_in? and show_menu? %>
+  <%= render "shared/tab_bar" %>
+  <%= render "shared/#{session[:cur_tab]}_menu" unless session[:cur_tab].nil?  %>
+<% end %>
 
 </header>

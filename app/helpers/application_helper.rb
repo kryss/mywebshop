@@ -7,9 +7,7 @@ module ApplicationHelper
     request. + "/" + page
   end
   def show_user_url(page)
-    url = "/" + request.path_parameters[:controller] + "/" + request.path_parameters[:action] +  "/" + request.path_parameters[:id]
-    return url + "/" + page
+    "/users/show/#{current_user.id}/#{page}"
   end
-
 
 end

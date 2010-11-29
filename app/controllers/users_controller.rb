@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     # @user assigned in correct_user filter
     @title = @user.name
     @page = (params[:page].nil?) ? "seller" : params[:page]
+    session[:cur_tab] = @page  
     @content_page = verif_shop_exist unless params[:content_page].nil?
   end
 

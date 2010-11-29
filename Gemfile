@@ -12,6 +12,9 @@ gem 'webrat'
 gem 'will_paginate', '~> 3.0.beta'
 gem 'tabs_on_rails'
 gem 'formtastic', '>= 1.2'
+gem 'paperclip', '>= 2.3.6'
+
+
 
 group :development do
   gem 'rspec-rails', ">=2.0.0.beta.22"

@@ -1,0 +1,11 @@
+<!--Tabplugin Doc http://www.simonecarletti.com/code/tabs_on_rails/-->
+<div id="tab_menu">
+<% tabs_tag do |tab| %>
+  <%= tab.buy  I18n.t(:buy), show_user_url("buyer")  %>
+  <%= tab.sell I18n.t(:sell), shops_shop_status_path(current_user.id) %>
+  <%= tab.message I18n.t(:message), show_user_url("msg")  %>
+<% end %>
+</div>
+<div id="tab_menu_line">&nbsp;</div>
+
+

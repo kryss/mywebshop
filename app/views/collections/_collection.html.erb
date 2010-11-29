@@ -1,0 +1,7 @@
+<div class="co_edit_link"><%= link_to "Edit", edit_shop_collection_path(current_shop.id, c.id) %> </div>
+<div class="co_name"><%= c.name %></div>
+<div class="co_delete_link"><%= link_to "delete", shop_collection_path(current_shop.id, c.id), :method => :delete, :confirm => "Sure ?",
+                                  :title => "Delete #{c.name}" %></div>
+<div class="img_box">
+<%= link_to image_tag("collection_img.png", :border=>0), root_path %>
+</div>

@@ -1,3 +1,4 @@
+<div id="contents_zone" >
 <% store_location %>
 <% if current_user.shop.nil? %>
     Pas de boutique
@@ -5,6 +6,7 @@
 <% else %>
     Nom du magasin : <%= current_user.shop.name %>
     <%= link_to "delete", current_user.shop, :method => :delete, :confirm => "Sure ?", :title => "Delete #{current_user.shop.name}" %><br/>
-    <%= link_to I18n.t(:edit_shop), edit_shop_path %>
+    <%= link_to I18n.t(:edit_shop), edit_shop_path(current_shop.id) %>
 
 <% end %>
+</div>

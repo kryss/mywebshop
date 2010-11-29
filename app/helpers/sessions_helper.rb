@@ -25,7 +25,22 @@ def current_user?(user)
    user == current_user
 end
 
+def current_shop
+  current_user.shop
+end
+
+def show_menu?
+  ($menu_show_list.include?(params[:controller] + "#" + params[:action]) or params[:controller] == "pages") ? false : true
+end
+
   private
+  
+  $menu_show_list = [ "users#index",
+                      "devise/registrations#edit", 
+                      "shops#index", 
+                      "shops#new",
+                      "shops#show" ]
+  
 #
 #  def user_from_remember_token
 #    User.authenticate_with_salt(*remember_token)
