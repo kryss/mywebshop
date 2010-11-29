@@ -50,7 +50,4 @@ private
     @shop = current_shop
     redirect_back_or root_path unless current_shop.collections.include?(@collection)
   end
-    
-
-
 end
