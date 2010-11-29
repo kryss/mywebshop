@@ -1,5 +1,5 @@
 class CollectionsController < ApplicationController
-  before_filter :right_shop, :only => [ :edit, :update, :destroy ]
+  before_filter :right_shop, :only => [ :edit, :update, :destroy, :show ]
   
   def new
     @shop = current_shop
@@ -39,6 +39,10 @@ class CollectionsController < ApplicationController
   def index
   end
 
+  def show 
+    current_collection = @collection
+  end
+
 private 
   def right_shop
     @collection = Collection.find(params[:id])
@@ -46,5 +50,6 @@ private
     redirect_back_or root_path unless current_shop.collections.include?(@collection)
   end
     
+
 
 end

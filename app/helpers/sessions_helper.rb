@@ -29,6 +29,20 @@ def current_shop
   current_user.shop
 end
 
+def current_collection=(collection)
+  session[:current_collection] = collection
+end
+
+def current_collection
+  session[:current_collection]
+end
+
+def current_collection?(collection)
+  session[:current_collection] == collection
+end
+
+
+
 def show_menu?
   ($menu_show_list.include?(params[:controller] + "#" + params[:action]) or params[:controller] == "pages") ? false : true
 end

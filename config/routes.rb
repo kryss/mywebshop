@@ -1,7 +1,4 @@
 Mywebshop::Application.routes.draw do
-
- 
-  
   devise_for :users
   
   get 'shops/shop_status'
@@ -10,6 +7,8 @@ Mywebshop::Application.routes.draw do
   get 'shops/subscription'
   get 'shops/services'
   
+  
+  resources :products
   resources :shops do 
     resources :collections 
   end
