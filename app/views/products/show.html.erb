@@ -1,2 +1,6 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+Photo : 
+<% unless @product.nil? %>
+  <% @product.photos.each do |photo| %>
+    <%= image_tag photo.data.url %>
+  <% end %>
+<% end %>

@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :right_collection?, :only => [ :edit, :update, :destroy ]
+  before_filter :right_collection?, :only => [ :edit, :update, :destroy, :show ]
   
   def new
     @product = Product.new

@@ -40,7 +40,7 @@ class CollectionsController < ApplicationController
   end
 
   def show 
-    session[:current_collection] = @collection
+    session[:current_collection] = @collection.id
   end
 
 private 

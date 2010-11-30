@@ -30,13 +30,12 @@ def current_shop
 end
 
 def current_collection
-  session[:current_collection]
+  @collection = Collection.find(session[:current_collection])
 end
-
+  
 def current_collection?(collection)
-  session[:current_collection] == collection
+  session[:current_collection] == collection.id
 end
-
 
 
 def show_menu?
