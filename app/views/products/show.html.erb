@@ -1,6 +1,10 @@
+<div id="contents_zone" >
+<%= render "shared/collection_status_bar" %>
+
 Photo : 
 <% unless @product.nil? %>
   <% @product.photos.each do |photo| %>
-    <%= image_tag photo.data.url %>
+    <%= image_tag photo.data.url(:small) %>
   <% end %>
 <% end %>
+</div>

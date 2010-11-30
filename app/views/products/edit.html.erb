@@ -3,8 +3,15 @@
 <%= semantic_form_for [@product] do |f| %>
 
   <%= render 'product_fields', :f => f %>
+  
+  <% count = 0 %>
+  <% f.fields_for :photos do |builder| %>
+     <%= image_tag @product.photos[count].data.url %>  
+     <%= builder.check_box :_destroy %>  
+     <%= builder.label :_destroy, "Remove Photo" %>  
+     <% count += 1 %>
+  <% end %>
+   
   <%= add_photo(f) %>
   <%= f.commit_button %>
 <% end %>
-
-

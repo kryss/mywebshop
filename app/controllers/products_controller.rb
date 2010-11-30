@@ -45,7 +45,8 @@ class ProductsController < ApplicationController
 
 private
   def right_collection?
+    @collection = current_collection
     @product = Product.find(params[:id])
-    redirect_back_or root_path unless current_collection.products.include?(@product)
+    redirect_back_or root_path unless @collection.products.include?(@product)
   end
 end

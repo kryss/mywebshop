@@ -15,6 +15,6 @@
 
 class Photo < ActiveRecord::Base
   belongs_to :product
-  has_attached_file :data  
+  has_attached_file :data, :styles => {:small => "150x150>"}  
 
 end

@@ -17,5 +17,13 @@ module ProductsHelper
     end
   end
     
-   
+  def show_photo(form_builder, photo)
+
+      form_builder.fields_for :photos, Photo.new, :child_index => 'NEW_RECORD' do |photo_form|
+        html = render(:partial => 'show_photo', :locals => { :f => photo_form, :photo => photo })
+        # page << "$('add_photo').insert({ before: '#{escape_javascript(html)}'.replace(/NEW_RECORD/g, new Date().getTime()) });"
+      end
+    # end
+  end 
+  
 end

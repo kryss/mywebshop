@@ -1,4 +1,5 @@
 Mywebshop::Application.routes.draw do
+
   devise_for :users
   
   get 'shops/shop_status'
